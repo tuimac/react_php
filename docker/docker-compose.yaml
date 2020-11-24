@@ -1,4 +1,4 @@
-version: '3'
+version: '3.8'
 services:
   php:
     build: ./php
@@ -7,12 +7,7 @@ services:
     container_name: php
     tty: true
     stdin_open: true
-    networks:
-      react_php_net:
-        ipv4_address: 10.20.0.3
-    extra_hosts:
-      - 'php: 10.20.0.3'
-      - 'react: 10.20.0.2'
+    network_mode: bridge
   react:
     build: ./react
     image: react
@@ -22,16 +17,4 @@ services:
       - 3000:3000
     tty: true
     stdin_open: true
-    networks:
-      react_php_net:
-        ipv4_address: 10.20.0.2
-    extra_hosts:
-      - 'php: 10.20.0.3'
-      - 'react: 10.20.0.2'
-networks:
-  react_php_net:
-    name: react_php
-    ipam:
-      driver: default
-      config:
-        - subnet: 10.20.0.0/24
+    network_mode: bridge

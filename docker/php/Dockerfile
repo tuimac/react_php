@@ -1,3 +1,7 @@
 FROM php:7.3-fpm-alpine
 
-RUN apk add bash git
+WORKDIR /root
+
+RUN apk add bash git &&
+    curl -sS https://getcomposer.org/installer | php && \
+    php composer.phar require aws/aws-sdk-php

@@ -6,4 +6,5 @@ WORKDIR /root
 
 ARG GITCLONE='git clone https://github.com/tuimac/react_php.git'
 
-RUN apk add nodejs npm git bash
+RUN apk add nodejs npm git bash && \
+    $GITCLONE

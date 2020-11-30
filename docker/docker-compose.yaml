@@ -5,6 +5,9 @@ services:
     image: php
     hostname: php
     container_name: php
+    volumes:
+      - './vimrc:/etc/vim/vimrc'
+      - './bashrc:/root/.bashrc'
     tty: true
     stdin_open: true
     network_mode: bridge
@@ -13,6 +16,9 @@ services:
     image: react
     hostname: react
     container_name: react
+    volumes:
+      - './vimrc:/etc/vim/vimrc'
+      - './bashrc:/root/.bashrc'
     ports:
       - 3000:3000
     tty: true

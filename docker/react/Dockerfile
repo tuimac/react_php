@@ -4,7 +4,7 @@ EXPOSE 3000
 
 WORKDIR /root
 
-ARG GITCLONE='git clone https://github.com/tuimac/react_php.git'
-
-RUN apk add nodejs npm git bash && \
-    $GITCLONE
+RUN apk update && \
+    apk upgrade && \
+    apk add nodejs npm git bash && \
+    git clone https://github.com/tuimac/react_php.git

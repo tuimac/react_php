@@ -1,5 +1,0 @@
-{
-    "name": "React PHP Project on docker. Orchestration tool is docker-compose.",
-    "dockerComposeFile": "docker-compose.yaml",
-    "service": "react_php"
-}

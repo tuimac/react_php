@@ -10,4 +10,6 @@ RUN apk update && \
     docker-php-ext-install intl && \
     mkdir /etc/vim/backup && \
     mkdir /etc/vim/undo && \
-    git clone https://github.com/tuimac/react_php.git
+    git clone https://github.com/tuimac/react_php.git && \
+    cd /root/react_php/php_pjt && \
+    composer install

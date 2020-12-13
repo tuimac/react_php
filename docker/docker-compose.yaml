@@ -8,6 +8,8 @@ services:
     volumes:
       - './vimrc:/etc/vim/vimrc'
       - './bashrc:/root/.bashrc'
+    ports:
+      - 8080:8765
     tty: true
     stdin_open: true
   react:

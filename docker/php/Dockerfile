@@ -2,6 +2,8 @@ FROM php:7.3-fpm-alpine
 
 WORKDIR /root
 
+EXPOSE 8765
+
 RUN apk update && \
     apk upgrade && \
     apk add --no-cache bash git composer icu-dev icu-libs vim && \

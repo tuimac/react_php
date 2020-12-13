@@ -8,6 +8,7 @@ if [ ! -e $PHP_PJT ]; then
     cd ${PHP_PJT}
     composer require aws/aws-sdk-php
     composer install
+    bin/cake server -H 0.0.0.0
 fi
 
 if [ ! -e $REACT_PJT ]; then

@@ -12,6 +12,10 @@ services:
       - 8080:8765
     tty: true
     stdin_open: true
+    dns:
+      - 10.3.0.2
+    networks:
+      - react_php
   react:
     build: ./react
     image: react
@@ -24,3 +28,10 @@ services:
       - 3000:3000
     tty: true
     stdin_open: true
+    dns:
+      - 10.3.0.2
+    networks:
+      - react_php
+networks:
+  react_php:
+    name: react_php
